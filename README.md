@@ -90,4 +90,4 @@ bibliotecas-conectadas/
 
 ## Bloco de Créditos
 
-- base desenvolvida no PI III por Cláudio, Julian, Larissa e equipe, evoluída no PI I-VI pelo Grupo 1 do PJI610
+- base desenvolvida no PI i-III por Cláudio, Julian, Larissa e equipe, evoluída no PI VI pelo Grupo 1 do PJI610
