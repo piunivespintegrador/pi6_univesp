@@ -87,3 +87,7 @@ bibliotecas-conectadas/
 
 - Todos os arquivos relacionados a "biblioteca" foram migrados para "unidade".
 - Utilize as rotas /livros e /unidades para acessar as funcionalidades principais.
+
+## Bloco de Créditos
+
+- base desenvolvida no PI III por Cláudio, Julian, Larissa e equipe, evoluída no PI I-VI pelo Grupo 1 do PJI610
