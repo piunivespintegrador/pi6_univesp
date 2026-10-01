@@ -21,7 +21,9 @@ dist-ssr/
 # ───────────────────────────────────────────────
 .env
 .env.*
-!.env.example  # mantém um exemplo genérico, se houver
+
+# mantém um exemplo genérico, se houver
+!.env.example
 
 # ───────────────────────────────────────────────
 # 💻 CONFIGURAÇÕES DE EDITOR
