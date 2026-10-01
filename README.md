@@ -2,6 +2,64 @@
 
 Este projeto implementa um sistema de gerenciamento de unidades (bibliotecas) e livros, com funcionalidades de CRUD (Criar, Ler, Editar, Excluir) para ambos. Desenvolvido utilizando HTML, CSS, JavaScript vanilla, Web Components e Vite.
 
+## Configuração e execução
+
+### Pré-requisitos
+
+- Node.js 18 ou superior.
+- npm (incluído com o Node.js).
+- Backend da aplicação disponível. Por padrão, o frontend usa `http://127.0.0.1:8000` durante o desenvolvimento.
+
+### Instalação
+
+Na raiz do projeto, instale as dependências e crie o arquivo de ambiente local:
+
+```bash
+npm ci
+cp .env.example .env
+```
+
+Edite o `.env` e informe a URL raiz do backend em `VITE_API_URL`, sem acrescentar `/gestor`:
+
+```env
+VITE_API_URL=http://127.0.0.1:8000
+VITE_ISBN_LOOKUP_ENABLED=true
+```
+
+Se o backend estiver em outro endereço, substitua a URL acima. Para desativar a busca automática de metadados por ISBN, defina `VITE_ISBN_LOOKUP_ENABLED=false`. O arquivo `.env` é local e não deve ser enviado ao repositório.
+
+### Desenvolvimento
+
+Inicie o servidor frontend:
+
+```bash
+npm run dev
+```
+
+Se o comando falhar com `sh: 1: vite: not found`, instale as dependências na raiz do projeto e tente novamente:
+
+```bash
+npm ci
+npm run dev
+```
+
+Abra no navegador o endereço informado pelo Vite (normalmente `http://localhost:5173`). Mantenha o backend em execução para carregar e salvar livros, unidades, usuários e empréstimos.
+
+### Build e preview
+
+Para gerar a versão de produção e servi-la localmente para conferência:
+
+```bash
+npm run build
+npm run preview
+```
+
+O build é criado em `dist/`; o comando de preview informa o endereço local onde ele está sendo servido.
+
+### Login
+
+No estado atual, o login é temporário e aceita qualquer usuário e senha; ele não valida credenciais no backend. Não considere esse comportamento uma proteção de acesso para produção.
+
 ## Funcionalidades
 
 O sistema permite:
@@ -28,10 +86,10 @@ No formulário de livro, ao informar ISBN válido:
 
 ## Variáveis de ambiente
 
-As variáveis abaixo estão em `.env.example`:
+O arquivo `.env.example` lista as variáveis disponíveis. Copie-o para `.env` antes de iniciar o Vite e configure:
 
-- `VITE_API_URL`: URL base da API backend.
-- `VITE_ISBN_LOOKUP_ENABLED`: habilita/desabilita o preenchimento automático por ISBN (`true`/`false`).
+- `VITE_API_URL`: URL raiz do backend, por exemplo `http://127.0.0.1:8000` (sem `/gestor`). Se omitida, o frontend usa o backend local no desenvolvimento e `https://biblio-webapi.onrender.com` nos demais modos.
+- `VITE_ISBN_LOOKUP_ENABLED`: habilita/desabilita o preenchimento automático por ISBN. Use `false` para desativar; se omitida, a funcionalidade fica habilitada.
 
 ## Estrutura do Projeto
 
